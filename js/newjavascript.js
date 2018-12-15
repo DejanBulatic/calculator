@@ -67,3 +67,15 @@ function deleteChar() {
 
     setEntry(entry);
 }
+
+function newBackground() {
+    document.getElementById('wall').setAttribute("style", "background-image: url(img/space.jpg)");
+    document.getElementById('bgTrans').setAttribute("style", "background: linear-gradient(to bottom, rgba(187, 0, 255, 0.9), rgba(241, 62, 62, 0.9))");
+}
+
+function oldBackground() {
+    document.getElementById('wall').setAttribute("style", "background-image: url(img/blur.jpg)");
+    document.getElementById('bgTrans').setAttribute("style", "background: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7))");
+
+}
+

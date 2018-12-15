@@ -4,11 +4,12 @@
     font-weight: 100;
 }
 
-.bg-section {
+.bgSection {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    transition: 1s ease;
 }
 
 .lead-p {
@@ -20,7 +21,10 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 40px;
-    color: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7));
+    background: linear-gradient(to bottom, rgb(187, 0, 255), rgb(241, 62, 62));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
     animation-delay: 0.5s;
 }
 
@@ -40,6 +44,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
+    text-shadow: 0 0 100px #000;
 }
 
 .big-p {
@@ -80,6 +85,7 @@
 
 .calc-bg {
     border-radius: 15px;;
+    transition: 2s ease;
 }
 
 nav a {

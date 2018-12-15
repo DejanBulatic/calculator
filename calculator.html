@@ -28,7 +28,7 @@
         <title>Calculator</title>
     </head>
     <body>
-        <section class="bg-section py-4 py-lg-5" style="background-image: url(img/blur.jpg)">
+        <section id="wall" class="bgSection py-4 py-lg-5" style="background-image: url(img/blur.jpg)">
             <div class="container text-center">
 
 
@@ -52,11 +52,11 @@
 
                     <div class="col-12 col-md-6 text-left pl-md-5">
                         <div class="calc-skin p-2 d-inline-block bg-transparent">
-                            <div class="calc-bg text-center px-2 py-4 d-inline-block"  style="background: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7))">
+                            <div id="bgTrans" class="calc-bg text-center px-2 py-4 d-inline-block"  style="background: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7))">
                                 <nav class="text-white mb-3">
-                                    <a href="#" class="text-uppercase text-white">standard</a>
+                                    <a href="#" class="text-uppercase text-white" onclick="oldBackground();return false;">standard</a>
                                     <span class="mx-4">|</span>
-                                    <a href="#" class="text-uppercase text-white">scientific</a>
+                                    <a href="#" class="text-uppercase text-white" onclick="newBackground();return false;">scientific</a>
                                 </nav>
 
                                 <input type="text" placeholder="0" value="" id="unos" disabled="" class="calc-field mb-2 bg-transparent" style="text-align: right">
@@ -77,19 +77,19 @@
                                 <button class="hvr-bounce-out" onclick="insertChar(7)">7</button> <!--Unesi 7-->
                                 <button class="hvr-bounce-out" onclick="insertChar(8)">8</button><!--Unesi 8-->
                                 <button class="hvr-bounce-out" onclick="insertChar(9)">9</button> <!--Unesi 9-->
-                                <button class="hvr-bounce-out opp" onclick="insertChar(' / ')">/</button> <!--podeli-->
+                                <button class="hvr-pop opp" onclick="insertChar(' / ')">/</button> <!--podeli-->
                                 <br>
                                 <button class="hvr-pop" onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
                                 <button class="hvr-bounce-out" onclick="insertChar(4)">4</button>  <!--Unesi 4-->
                                 <button class="hvr-bounce-out" onclick="insertChar(5)">5</button>  <!--Unesi 5-->
                                 <button class="hvr-bounce-out" onclick="insertChar(6)">6</button>  <!--Unesi 6-->
-                                <button class="hvr-bounce-out opp" onclick="insertChar(' * ')">x</button>  <!--pomnozi-->
+                                <button class="hvr-pop opp" onclick="insertChar(' * ')">x</button>  <!--pomnozi-->
                                 <br>
                                 <button class="hvr-pop" onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
                                 <button class="hvr-bounce-out" onclick="insertChar(1)">1</button>  <!--Unesi 1-->
                                 <button class="hvr-bounce-out" onclick="insertChar(2)">2</button> <!--Unesi 2-->
                                 <button class="hvr-bounce-out" onclick="insertChar(3)">3</button> <!--Unesi 3-->
-                                <button class="hvr-bounce-out opp" onclick="insertChar(' - ')">-</button>  <!--oduzimanje-->
+                                <button class="hvr-pop opp" onclick="insertChar(' - ')">-</button>  <!--oduzimanje-->
                                 <br>
 
                                 <button class="hvr-bounce-out long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
