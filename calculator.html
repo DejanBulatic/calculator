@@ -50,52 +50,54 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-
-       
-
-        
-
-        <h2>KALKULATOR</h2>
-
-        
-        <input type="text" placeholder="0" value="" id="unos" disabled="" style="text-align: right">
-
-        <br>
-        <button>&Sqrt;</button><!--kvadratni koren-->
-        <button>&lpar;</button><!--leva zagrada-->
-        <button>&rpar;</button><!--desna zagrada-->
-        <button>&lang;-</button> <!--brisanje jednog elementa-->
-        <button>AC</button> <!-- brisanje svega-->
-        
-        
-
-        <br>
-        <button>x<sup>2</sup></button> <!--na kvadrat-->
-        <button>7</button> <!--Unesi 7-->
-        <button>8</button><!--Unesi 8-->
-        <button>9</button> <!--Unesi 9-->
-        <button class="opp">/</button> <!--podeli-->
-        <br>
-        <button>cos</button>  <!--izracunaj kosinus-->
-        <button>4</button>  <!--Unesi 4-->
-        <button>5</button>  <!--Unesi 5-->
-        <button>6</button>  <!--Unesi 6-->
-        <button class="opp">x</button>  <!--pomnozi-->
-        <br>
-        <button>sin</button>  <!--Izracunaj sinus-->
-        <button>1</button>  <!--Unesi 1-->
-        <button>2</button> <!--Unesi 2-->
-        <button>3</button> <!--Unesi 3-->
-        <button class="opp">-</button>  <!--oduzimanje-->
-        <br>
-        
-        <button class="long">0</button>  <!--Unesi 0-->
-        <button>.</button> <!--Unesi .-->
-        <button class="opp">=</button> <!--IZRACUNAJ-->
-        <button class="opp">+</button>  <!--saberi -->
+        <section class="body-section">
+            <div class="container">
 
 
 
+
+
+                <h2>KALKULATOR</h2>
+
+
+                <input type="text" placeholder="0" value="" id="unos" disabled="" style="text-align: right">
+
+                <br>
+                <button onclick="squareRootCalc()">&Sqrt;</button><!--kvadratni koren-->
+                <button onclick="insertChar('(')">&lpar;</button><!--leva zagrada-->
+                <button onclick="insertChar(')')">&rpar;</button><!--desna zagrada-->
+                <button onclick="deleteChar()">&lang;-</button> <!--brisanje jednog elementa-->
+                <button onclick="clearData()">AC</button> <!-- brisanje svega-->
+
+
+
+                <br>
+                <button onclick="squareCalc()">x<sup>2</sup></button> <!--na kvadrat-->
+                <button onclick="insertChar(7)">7</button> <!--Unesi 7-->
+                <button onclick="insertChar(8)">8</button><!--Unesi 8-->
+                <button onclick="insertChar(9)">9</button> <!--Unesi 9-->
+                <button class="opp" onclick="insertChar('/')">/</button> <!--podeli-->
+                <br>
+                <button onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
+                <button onclick="insertChar(4)">4</button>  <!--Unesi 4-->
+                <button onclick="insertChar(5)">5</button>  <!--Unesi 5-->
+                <button onclick="insertChar(6)">6</button>  <!--Unesi 6-->
+                <button class="opp" onclick="insertChar('*')">x</button>  <!--pomnozi-->
+                <br>
+                <button onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
+                <button onclick="insertChar(1)">1</button>  <!--Unesi 1-->
+                <button onclick="insertChar(2)">2</button> <!--Unesi 2-->
+                <button onclick="insertChar(3)">3</button> <!--Unesi 3-->
+                <button class="opp" onclick="insertChar('-')">-</button>  <!--oduzimanje-->
+                <br>
+
+                <button class="long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
+                <button onclick="insertChar('.')">.</button> <!--Unesi .-->
+                <button class="opp" onclick="calculate()">=</button> <!--IZRACUNAJ-->
+                <button class="opp" onclick="insertChar('+')">+</button>  <!--saberi -->
+
+            </div>
+        </section>
 
 
 
@@ -111,7 +113,72 @@ and open the template in the editor.
             //dugmice za +, -, *, / , racunanje kvadratnog koren, racunanje kvadrata, sinusa i cosinusa
 
 
-            
+            function insertChar(char) {
+                var entry = getEntry();//document.getElementById('unos').value;
+                entry = entry + char;
+                setEntry(entry);//document.getElementById('unos').value = entry;
+            }
+
+
+            function clearData() {
+                setEntry('');//document.getElementById('unos').value = '';
+            }
+
+
+            function calculate() {
+                var entry = getEntry();//document.getElementById('unos').value;
+                var resulat = eval(entry);
+                setEntry(resulat);//document.getElementById('unos').value = resulat;
+            }
+
+            function squareRootCalc() {
+                var entry = getEntry();//document.getElementById('unos').value;
+                var resulat = Math.sqrt(eval(entry));
+                setEntry(resulat);//document.getElementById('unos').value = resulat;
+            }
+
+            function squareCalc() {
+                var entry = getEntry();//document.getElementById('unos').value;
+                var resulat = eval(entry) * eval(entry);
+                setEntry(resulat);//document.getElementById('unos').value = resulat;
+            }
+
+
+            function cosCalc() {
+                var entry = getEntry();//document.getElementById('unos').value;
+                var resulat = math.cos(entry);
+                setEntry(resulat);//document.getElementById('unos').value = resulat;
+            }
+
+            function sinCalc() {
+                var entry = getEntry();//document.getElementById('unos').value;
+                var rad = (3.14159265359 / 180) * eval(entry);
+                var resulat = math.sin(rad);
+                setEntry(resulat);//document.getElementById('unos').value = resulat;
+            }
+
+
+
+
+
+            function getEntry() {
+                return document.getElementById('unos').value;
+            }
+
+
+            function setEntry(entry) {
+                document.getElementById('unos').value = entry;
+            }
+
+            function deleteChar() {
+                var entry = getEntry();
+                // '5+6+8'
+
+                entry = entry.substr(0, (entry.length - 1));
+
+                setEntry(entry);
+            }
+
 
 
 
