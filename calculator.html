@@ -35,22 +35,22 @@
 
 
 
+                <p class="lead-p text-white fadeInDown animated mb-0">Welcome to our</p>
+                <h2 class="lead-text mb-5 fadeInDown animated">Happy calculator</h2>
+                <section class="row content py-4 text-center align-items-center">
 
-                <h2 class="lead-text text-white mb-5 bounceInDown animated">Happy calculator</h2>
-                <section class="row content py-4 text-center">
 
-
-                    <div class="col-0 col-md-6">
+                    <div class="col-0 col-md-6 pr-md-5">
                         <article class="content-item text-right">
-                            <p>Doing <span class="medium-p">mathematics</span></p>
-                            <p>doesn't have to be</p>
-                            <p class="big-p">boring</p>
-                            <p>with our animated</p>
-                            <p><span class="big-p">happy</span> calculator</p>
+                            <p class="first-p animated bounceInLeft">Doing <span class="medium-p">mathematics</span></p>
+                            <p class="second-p animated bounceInLeft">doesn't have to be</p>
+                            <p class="third-p animated bounceInLeft big-p">boring</p>
+                            <p class="fourth-p animated bounceInLeft">with our animated</p>
+                            <p class="fift-p animated bounceInLeft" ><span class="big-p">happy</span> calculator</p>
                         </article>
                     </div>
 
-                    <div class="col-12 col-md-6 text-lg-left">
+                    <div class="col-12 col-md-6 text-left pl-md-5">
                         <div class="calc-skin p-2 d-inline-block bg-transparent">
                             <div class="calc-bg text-center px-2 py-4 d-inline-block"  style="background: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7))">
                                 <nav class="text-white mb-3">
@@ -64,38 +64,38 @@
                                 <input type="text" placeholder="0" value="" id="rez" disabled="" class="suma bg-transparent text-white mb-4" style="text-align: right">
 
                                 <br>
-                                <button onclick="squareRootCalc()">&Sqrt;</button><!--kvadratni koren-->
-                                <button onclick="insertChar('(')">&lpar;</button><!--leva zagrada-->
-                                <button onclick="insertChar(')')">&rpar;</button><!--desna zagrada-->
-                                <button onclick="deleteChar()">&lang;-</button> <!--brisanje jednog elementa-->
-                                <button onclick="clearData()">AC</button> <!-- brisanje svega-->
+                                <button class="hvr-pop" onclick="squareRootCalc()">&Sqrt;</button><!--kvadratni koren-->
+                                <button class="hvr-pop" onclick="insertChar('(')">&lpar;</button><!--leva zagrada-->
+                                <button class="hvr-pop" onclick="insertChar(')')">&rpar;</button><!--desna zagrada-->
+                                <button class="hvr-pop" onclick="deleteChar()">&lang;-</button> <!--brisanje jednog elementa-->
+                                <button class="hvr-pop" onclick="clearData()">AC</button> <!-- brisanje svega-->
 
 
 
                                 <br>
-                                <button onclick="squareCalc()">x<sup>2</sup></button> <!--na kvadrat-->
-                                <button onclick="insertChar(7)">7</button> <!--Unesi 7-->
-                                <button onclick="insertChar(8)">8</button><!--Unesi 8-->
-                                <button onclick="insertChar(9)">9</button> <!--Unesi 9-->
-                                <button class="opp" onclick="insertChar(' / ')">/</button> <!--podeli-->
+                                <button class="hvr-pop" onclick="squareCalc()">x<sup>2</sup></button> <!--na kvadrat-->
+                                <button class="hvr-bounce-out" onclick="insertChar(7)">7</button> <!--Unesi 7-->
+                                <button class="hvr-bounce-out" onclick="insertChar(8)">8</button><!--Unesi 8-->
+                                <button class="hvr-bounce-out" onclick="insertChar(9)">9</button> <!--Unesi 9-->
+                                <button class="hvr-bounce-out opp" onclick="insertChar(' / ')">/</button> <!--podeli-->
                                 <br>
-                                <button onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
-                                <button onclick="insertChar(4)">4</button>  <!--Unesi 4-->
-                                <button onclick="insertChar(5)">5</button>  <!--Unesi 5-->
-                                <button onclick="insertChar(6)">6</button>  <!--Unesi 6-->
-                                <button class="opp" onclick="insertChar(' * ')">x</button>  <!--pomnozi-->
+                                <button class="hvr-pop" onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
+                                <button class="hvr-bounce-out" onclick="insertChar(4)">4</button>  <!--Unesi 4-->
+                                <button class="hvr-bounce-out" onclick="insertChar(5)">5</button>  <!--Unesi 5-->
+                                <button class="hvr-bounce-out" onclick="insertChar(6)">6</button>  <!--Unesi 6-->
+                                <button class="hvr-bounce-out opp" onclick="insertChar(' * ')">x</button>  <!--pomnozi-->
                                 <br>
-                                <button onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
-                                <button onclick="insertChar(1)">1</button>  <!--Unesi 1-->
-                                <button onclick="insertChar(2)">2</button> <!--Unesi 2-->
-                                <button onclick="insertChar(3)">3</button> <!--Unesi 3-->
-                                <button class="opp" onclick="insertChar(' - ')">-</button>  <!--oduzimanje-->
+                                <button class="hvr-pop" onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
+                                <button class="hvr-bounce-out" onclick="insertChar(1)">1</button>  <!--Unesi 1-->
+                                <button class="hvr-bounce-out" onclick="insertChar(2)">2</button> <!--Unesi 2-->
+                                <button class="hvr-bounce-out" onclick="insertChar(3)">3</button> <!--Unesi 3-->
+                                <button class="hvr-bounce-out opp" onclick="insertChar(' - ')">-</button>  <!--oduzimanje-->
                                 <br>
 
-                                <button class="long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
-                                <button onclick="insertChar('.')">.</button> <!--Unesi .-->
-                                <button class="opp" onclick="calculate()">=</button> <!--IZRACUNAJ-->
-                                <button class="opp" onclick="insertChar(' + ')">+</button>  <!--saberi -->
+                                <button class="hvr-bounce-out long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
+                                <button class="hvr-pop" onclick="insertChar('.')">.</button> <!--Unesi .-->
+                                <button class="opp hvr-buzz" onclick="calculate()">=</button> <!--IZRACUNAJ-->
+                                <button class="opp hvr-pop" onclick="insertChar(' + ')">+</button>  <!--saberi -->
                             </div>
                         </div>
                     </div>
