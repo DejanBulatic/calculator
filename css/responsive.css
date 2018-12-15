@@ -1,0 +1,37 @@
+
+
+
+@media(min-width:576px){
+
+
+
+}
+
+
+@media(min-width:768px){
+
+    .content-item {
+        display: block;
+    }
+
+}
+
+
+@media(min-width:992px){
+
+    .content-item {
+        display: block;
+    }
+
+    .calc-skin {
+        text-align: left !important;
+    }
+}
+
+
+
+
+
+@media(min-width:1200px){
+
+}

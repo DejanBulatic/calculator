@@ -1,220 +1,115 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <title>JS NUMBERS</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="">
+        <meta name="description" content="Bootstrap project">
+        <meta name="keywords" content="html, css, bootstrap, cubes">
+
+        <!-- Bootstrap CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Fonts -->
+        <link href="css/fonts.css" rel="stylesheet" type="text/css"/>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-        <style>
 
-            *{
-                box-sizing: border-box;
-            }
-            button{
-                width: 45px;
-                height: 40px;
-                border:1px solid #000;
-                font-size: 20px;
-                line-height: 38px;
-                vertical-align: top;
-                background: #f0f0f0;
-                margin-bottom: 10px;
-                cursor:pointer;
-                display: inline-block;
-                border-radius: 3px;
-            }
-            input{
-                height: 40px;
-                border:1px solid #000;
-                padding: 0 5px;
-                vertical-align: top;
-                background: #f2f2f2;
-                font-size: 24px;
-                width: 240px;
-                margin-bottom: 10px;
-                color:#000;
-            }
-            .long{
-                width: 95px;
-            }
-            .opp{
-                background: orange;
-                color:#fff;
-            }
-        </style>
+
+        <!-- Animate.css -->
+        <link href="css/animations.css" rel="stylesheet" type="text/css"/>
+        <!--THEME CSS-->  
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/responsive.css" rel="stylesheet" type="text/css"/>
+
+        <title>Calculator</title>
     </head>
     <body>
-        <section class="body-section">
-            <div class="container">
+        <section class="bg-section py-4 py-lg-5" style="background-image: url(img/blur.jpg)">
+            <div class="container text-center">
 
 
 
 
 
-                <h2>KALKULATOR</h2>
+
+                <h2 class="lead-text text-white mb-5 bounceInDown animated">Happy calculator</h2>
+                <section class="row content py-4 text-center">
 
 
-                <input type="text" placeholder="0" value="" id="unos" disabled="" style="text-align: right">
+                    <div class="col-0 col-md-6">
+                        <article class="content-item text-right">
+                            <p>Doing <span class="medium-p">mathematics</span></p>
+                            <p>doesn't have to be</p>
+                            <p class="big-p">boring</p>
+                            <p>with our animated</p>
+                            <p><span class="big-p">happy</span> calculator</p>
+                        </article>
+                    </div>
 
-                <br>
-                <button onclick="squareRootCalc()">&Sqrt;</button><!--kvadratni koren-->
-                <button onclick="insertChar('(')">&lpar;</button><!--leva zagrada-->
-                <button onclick="insertChar(')')">&rpar;</button><!--desna zagrada-->
-                <button onclick="deleteChar()">&lang;-</button> <!--brisanje jednog elementa-->
-                <button onclick="clearData()">AC</button> <!-- brisanje svega-->
+                    <div class="col-12 col-md-6 text-lg-left">
+                        <div class="calc-skin p-2 d-inline-block bg-transparent">
+                            <div class="calc-bg text-center px-2 py-4 d-inline-block"  style="background: linear-gradient(to bottom, rgba(187, 0, 255, 0.7), rgba(241, 62, 62, 0.7))">
+                                <nav class="text-white mb-3">
+                                    <a href="#" class="text-uppercase text-white">standard</a>
+                                    <span class="mx-4">|</span>
+                                    <a href="#" class="text-uppercase text-white">scientific</a>
+                                </nav>
+
+                                <input type="text" placeholder="0" value="" id="unos" disabled="" class="calc-field mb-2 bg-transparent" style="text-align: right">
+                                <br>
+                                <input type="text" placeholder="0" value="" id="rez" disabled="" class="suma bg-transparent text-white mb-4" style="text-align: right">
+
+                                <br>
+                                <button onclick="squareRootCalc()">&Sqrt;</button><!--kvadratni koren-->
+                                <button onclick="insertChar('(')">&lpar;</button><!--leva zagrada-->
+                                <button onclick="insertChar(')')">&rpar;</button><!--desna zagrada-->
+                                <button onclick="deleteChar()">&lang;-</button> <!--brisanje jednog elementa-->
+                                <button onclick="clearData()">AC</button> <!-- brisanje svega-->
 
 
 
-                <br>
-                <button onclick="squareCalc()">x<sup>2</sup></button> <!--na kvadrat-->
-                <button onclick="insertChar(7)">7</button> <!--Unesi 7-->
-                <button onclick="insertChar(8)">8</button><!--Unesi 8-->
-                <button onclick="insertChar(9)">9</button> <!--Unesi 9-->
-                <button class="opp" onclick="insertChar('/')">/</button> <!--podeli-->
-                <br>
-                <button onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
-                <button onclick="insertChar(4)">4</button>  <!--Unesi 4-->
-                <button onclick="insertChar(5)">5</button>  <!--Unesi 5-->
-                <button onclick="insertChar(6)">6</button>  <!--Unesi 6-->
-                <button class="opp" onclick="insertChar('*')">x</button>  <!--pomnozi-->
-                <br>
-                <button onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
-                <button onclick="insertChar(1)">1</button>  <!--Unesi 1-->
-                <button onclick="insertChar(2)">2</button> <!--Unesi 2-->
-                <button onclick="insertChar(3)">3</button> <!--Unesi 3-->
-                <button class="opp" onclick="insertChar('-')">-</button>  <!--oduzimanje-->
-                <br>
+                                <br>
+                                <button onclick="squareCalc()">x<sup>2</sup></button> <!--na kvadrat-->
+                                <button onclick="insertChar(7)">7</button> <!--Unesi 7-->
+                                <button onclick="insertChar(8)">8</button><!--Unesi 8-->
+                                <button onclick="insertChar(9)">9</button> <!--Unesi 9-->
+                                <button class="opp" onclick="insertChar(' / ')">/</button> <!--podeli-->
+                                <br>
+                                <button onclick="cosCalc()">cos</button>  <!--izracunaj kosinus-->
+                                <button onclick="insertChar(4)">4</button>  <!--Unesi 4-->
+                                <button onclick="insertChar(5)">5</button>  <!--Unesi 5-->
+                                <button onclick="insertChar(6)">6</button>  <!--Unesi 6-->
+                                <button class="opp" onclick="insertChar(' * ')">x</button>  <!--pomnozi-->
+                                <br>
+                                <button onclick="sinCalc()">sin</button>  <!--Izracunaj sinus-->
+                                <button onclick="insertChar(1)">1</button>  <!--Unesi 1-->
+                                <button onclick="insertChar(2)">2</button> <!--Unesi 2-->
+                                <button onclick="insertChar(3)">3</button> <!--Unesi 3-->
+                                <button class="opp" onclick="insertChar(' - ')">-</button>  <!--oduzimanje-->
+                                <br>
 
-                <button class="long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
-                <button onclick="insertChar('.')">.</button> <!--Unesi .-->
-                <button class="opp" onclick="calculate()">=</button> <!--IZRACUNAJ-->
-                <button class="opp" onclick="insertChar('+')">+</button>  <!--saberi -->
-
+                                <button class="long" onclick="insertChar(0)">0</button>  <!--Unesi 0-->
+                                <button onclick="insertChar('.')">.</button> <!--Unesi .-->
+                                <button class="opp" onclick="calculate()">=</button> <!--IZRACUNAJ-->
+                                <button class="opp" onclick="insertChar(' + ')">+</button>  <!--saberi -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
 
 
+        <!-- Optional JavaScript -->
+        <script src="js/newjavascript.js" type="text/javascript"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/popper.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-        <script type="text/javascript">
-
-
-
-            //Napraviti kalkulator
-            //Kalkulator treba da sadrzi brojeve od 0 - 9 koji su button
-            //input za ispisivanje i unos type(text), DISABLED
-            // dugme za resetovanje unosa
-            //dugme za brisanje zadnje unesene vrednosti
-            //dugmice za +, -, *, / , racunanje kvadratnog koren, racunanje kvadrata, sinusa i cosinusa
-
-
-            function insertChar(char) {
-                var entry = getEntry();//document.getElementById('unos').value;
-                entry = entry + char;
-                setEntry(entry);//document.getElementById('unos').value = entry;
-            }
-
-
-            function clearData() {
-                setEntry('');//document.getElementById('unos').value = '';
-            }
-
-
-            function calculate() {
-                var entry = getEntry();//document.getElementById('unos').value;
-                var resulat = eval(entry);
-                setEntry(resulat);//document.getElementById('unos').value = resulat;
-            }
-
-            function squareRootCalc() {
-                var entry = getEntry();//document.getElementById('unos').value;
-                var resulat = Math.sqrt(eval(entry));
-                setEntry(resulat);//document.getElementById('unos').value = resulat;
-            }
-
-            function squareCalc() {
-                var entry = getEntry();//document.getElementById('unos').value;
-                var resulat = eval(entry) * eval(entry);
-                setEntry(resulat);//document.getElementById('unos').value = resulat;
-            }
-
-
-            function cosCalc() {
-                var entry = getEntry();//document.getElementById('unos').value;
-                var resulat = math.cos(entry);
-                setEntry(resulat);//document.getElementById('unos').value = resulat;
-            }
-
-            function sinCalc() {
-                var entry = getEntry();//document.getElementById('unos').value;
-                var rad = (3.14159265359 / 180) * eval(entry);
-                var resulat = math.sin(rad);
-                setEntry(resulat);//document.getElementById('unos').value = resulat;
-            }
-
-
-
-
-
-            function getEntry() {
-                return document.getElementById('unos').value;
-            }
-
-
-            function setEntry(entry) {
-                document.getElementById('unos').value = entry;
-            }
-
-            function deleteChar() {
-                var entry = getEntry();
-                // '5+6+8'
-
-                entry = entry.substr(0, (entry.length - 1));
-
-                setEntry(entry);
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </script>
     </body>
 </html>
